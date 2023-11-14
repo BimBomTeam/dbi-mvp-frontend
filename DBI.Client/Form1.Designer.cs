@@ -1,6 +1,6 @@
 ﻿namespace DBI.Client
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnBrowse = new Button();
+            txtPathPhoto = new TextBox();
+            SuspendLayout();
+            // 
+            // btnBrowse
+            // 
+            btnBrowse.Location = new Point(12, 12);
+            btnBrowse.Name = "btnBrowse";
+            btnBrowse.Size = new Size(75, 23);
+            btnBrowse.TabIndex = 0;
+            btnBrowse.Text = "Browse";
+            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.Click += btnBrowse_Click;
+            // 
+            // txtPathPhoto
+            // 
+            txtPathPhoto.Location = new Point(93, 12);
+            txtPathPhoto.Name = "txtPathPhoto";
+            txtPathPhoto.Size = new Size(100, 23);
+            txtPathPhoto.TabIndex = 1;
+            // 
+            // mainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(txtPathPhoto);
+            Controls.Add(btnBrowse);
+            Name = "mainForm";
+            Text = "Dog Breed Identification";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button btnBrowse;
+        private TextBox txtPathPhoto;
     }
 }

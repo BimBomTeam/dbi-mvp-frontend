@@ -1,10 +1,25 @@
 namespace DBI.Client
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
-        public Form1()
+
+        private string pathPhoto = "";
+        public mainForm()
         {
             InitializeComponent();
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Dog Photo (*.png)|*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pathPhoto = openFileDialog.FileName;
+                    txtPathPhoto.Text = pathPhoto;
+                }
+            }
         }
     }
 }
