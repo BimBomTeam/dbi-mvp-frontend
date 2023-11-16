@@ -30,6 +30,9 @@
         {
             btnBrowse = new Button();
             txtPathPhoto = new TextBox();
+            phoDogPicture = new PictureBox();
+            txtAnswerDBI = new RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)phoDogPicture).BeginInit();
             SuspendLayout();
             // 
             // btnBrowse
@@ -46,18 +49,38 @@
             // 
             txtPathPhoto.Location = new Point(93, 12);
             txtPathPhoto.Name = "txtPathPhoto";
-            txtPathPhoto.Size = new Size(100, 23);
+            txtPathPhoto.Size = new Size(219, 23);
             txtPathPhoto.TabIndex = 1;
+            // 
+            // phoDogPicture
+            // 
+            phoDogPicture.Location = new Point(12, 41);
+            phoDogPicture.Name = "phoDogPicture";
+            phoDogPicture.Size = new Size(300, 300);
+            phoDogPicture.TabIndex = 2;
+            phoDogPicture.TabStop = false;
+            // 
+            // txtAnswerDBI
+            // 
+            txtAnswerDBI.Location = new Point(12, 347);
+            txtAnswerDBI.Name = "txtAnswerDBI";
+            txtAnswerDBI.Size = new Size(300, 96);
+            txtAnswerDBI.TabIndex = 3;
+            txtAnswerDBI.Text = "";
             // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(320, 454);
+            Controls.Add(txtAnswerDBI);
+            Controls.Add(phoDogPicture);
             Controls.Add(txtPathPhoto);
             Controls.Add(btnBrowse);
+            MinimumSize = new Size(336, 493);
             Name = "mainForm";
             Text = "Dog Breed Identification";
+            ((System.ComponentModel.ISupportInitialize)phoDogPicture).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -66,5 +89,7 @@
 
         private Button btnBrowse;
         private TextBox txtPathPhoto;
+        private PictureBox phoDogPicture;
+        private RichTextBox txtAnswerDBI;
     }
 }
