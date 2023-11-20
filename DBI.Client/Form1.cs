@@ -3,6 +3,11 @@ using System.Text;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Net.Http.Json;
+using System.Net;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using System.Xml.Linq;
 
 namespace DBI.Client
 {
@@ -34,27 +39,32 @@ namespace DBI.Client
                     string base64ImageRepresentation = Convert.ToBase64String(imageArray); // Konwersja do Base64
 
 
-                    /*
+
                     using (var httpClient = new HttpClient())
                     {
-                        var url = "https://adres-twojego-serwera.com/upload"; // Adres URL serwera, gdzie przesy³asz obraz
-                        var content = new StringContent(base64ImageRepresentation, Encoding.UTF8, "application/base64");
+                        var url = "https://localhost:7219/api/DBI/identify";
+
+                        var values = new Dictionary<string, string>
+                        {
+                            { "base64", base64ImageRepresentation }
+                        };
+
+                        string json = JsonConvert.SerializeObject(values);
+
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                         var response = await httpClient.PostAsync(url, content);
 
                         if (response.IsSuccessStatusCode)
                         {
                             string responseContent = await response.Content.ReadAsStringAsync();
-                            txtAnswerDBI.Text = ("OdpowiedŸ z serwera: " + responseContent);
-                            // Tutaj mo¿na przetworzyæ odpowiedŸ serwera lub wyœwietliæ w programie.
+                            txtAnswerDBI.Text = ("Request is: " + responseContent);
                         }
                         else
                         {
-                            txtAnswerDBI.Text = ("Wyst¹pi³ b³¹d podczas przesy³ania obrazu: " + response.StatusCode);
+                            txtAnswerDBI.Text = ("Error: " + response.StatusCode);
                         }
                     }
-                    */
-
                 }
             }
         }

@@ -57,6 +57,7 @@
             phoDogPicture.Location = new Point(12, 41);
             phoDogPicture.Name = "phoDogPicture";
             phoDogPicture.Size = new Size(300, 300);
+            phoDogPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             phoDogPicture.TabIndex = 2;
             phoDogPicture.TabStop = false;
             // 
@@ -64,6 +65,7 @@
             // 
             txtAnswerDBI.Location = new Point(12, 347);
             txtAnswerDBI.Name = "txtAnswerDBI";
+            txtAnswerDBI.ReadOnly = true;
             txtAnswerDBI.Size = new Size(300, 96);
             txtAnswerDBI.TabIndex = 3;
             txtAnswerDBI.Text = "";
